@@ -81,7 +81,8 @@ void generate_opening_book() {
 int main(int argc, char** argv) {
   if(argc > 1) {
     int depth = atoi(argv[1]);
-    char pos_str[depth + 1] = {0};
+    std::vector<char> pos_vec(depth + 1, 0);
+    char* pos_str = pos_vec.data();
     explore(Position(), pos_str, depth);
   } else generate_opening_book();
 }
